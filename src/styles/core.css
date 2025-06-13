@@ -1,0 +1,85 @@
+@tailwind components;
+@layer components {
+  /* Glassmorphism 2.0 */
+  .glass-morphism {
+    @apply backdrop-blur-lg bg-white/5 border border-white/10 relative overflow-hidden;
+    &::before {
+      @apply absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 transition-all duration-500;
+      content: '';
+    }
+    &::after {
+      @apply absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 -rotate-45 transition-all duration-500;
+      content: '';
+    }
+    &:hover::before {
+      @apply opacity-100;
+    }
+    &:hover::after {
+      @apply opacity-100 translate-x-full;
+      transition: all 0.7s cubic-bezier(0.2, 1, 0.3, 1);
+    }
+  }
+
+  /* Magnetic Hover Effect */
+  .magnetic-hover {
+    @apply transition-transform duration-200 ease-out transform hover:scale-105;
+    &:hover {
+      transform: translate(var(--mx, 0), var(--my, 0)) scale(1.05);
+    }
+  }
+
+  /* Neon Text Effect */
+  .neon-text {
+    @apply relative;
+    text-shadow: 0 0 7px rgba(139, 92, 246, 0.3),
+                0 0 10px rgba(139, 92, 246, 0.3),
+                0 0 21px rgba(139, 92, 246, 0.3);
+  }
+
+  /* Animated Border */
+  .border-gradient {
+    @apply p-[1px] relative overflow-hidden rounded-xl;
+    background: linear-gradient(90deg, #9333EA, #EC4899, #9333EA);
+    background-size: 200% 100%;
+    animation: gradient-border 4s linear infinite;
+  }
+
+  /* Floating Elements */
+  .float-element {
+    animation: floating 3s ease-in-out infinite;
+  }
+
+  @keyframes floating {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+  }
+
+  @keyframes gradient-border {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+  }
+}
+
+
+/* Ono moje sve */
+
+
+
+/* Enhanced transitions */
+.transition-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Enhanced transitions */
+.transition-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
